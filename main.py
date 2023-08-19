@@ -5,7 +5,7 @@ from food import Food
 from snake import Snake
 
 screen = Screen()
-screen.setup(width=500, height=400)
+screen.setup(width=800, height=600)
 screen.bgcolor("black")
 screen.title("My Snake Game")
 screen.tracer(0)
@@ -28,6 +28,6 @@ while game_state_on:
 
     if snake.segments[0].distance(food) < 12:
         food.goto(random.randint(-250, 200), random.randint(-250, 200))
-        # snake.extend()
+        snake.extend()
 
 screen.exitonclick()
