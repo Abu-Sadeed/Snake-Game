@@ -1,3 +1,4 @@
+import random
 import time
 from turtle import Screen, Turtle
 from food import Food
@@ -24,5 +25,9 @@ while game_state_on:
     time.sleep(0.1)
 
     snake.move()
+
+    if snake.segments[0].distance(food) < 12:
+        food.goto(random.randint(-280, 280), random.randint(-280, 280))
+        snake.extend()
 
 screen.exitonclick()

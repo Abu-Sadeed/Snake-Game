@@ -40,3 +40,6 @@ class Snake:
     def right(self):
         if self.segments[0].heading() != 180:
             self.segments[0].setheading(0)
+
+    def extend(self):
+        self.add_segment(self.segments[-1].position())
