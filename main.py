@@ -27,7 +27,7 @@ while game_state_on:
     snake.move()
 
     if snake.segments[0].distance(food) < 12:
-        food.goto(random.randint(-280, 280), random.randint(-280, 280))
-        snake.extend()
+        food.goto(random.randint(-250, 200), random.randint(-250, 200))
+        # snake.extend()
 
 screen.exitonclick()
