@@ -22,3 +22,9 @@ class Scoreboard(Turtle):
         self.clear()
         self.write(f"Score: {self.score} High Score: {self.high_score}", align="center",
                    font=("Arial", 24, "normal"))
+
+    def score_reset(self):
+        self.score = 0
+        self.clear()
+        self.write(f"Score: {self.score} High Score: {self.high_score}", align="center",
+                   font=("Arial", 24, "normal"))
