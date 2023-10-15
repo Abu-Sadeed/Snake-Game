@@ -10,17 +10,15 @@ class Scoreboard(Turtle):
         self.hideturtle()
         self.goto(0, 250)
         self.score = 0
-        self.write(f"Score: {self.score}", align="center",
+        self.high_score = 0
+        self.write(f"Score: {self.score} High Score: {self.high_score}", align="center",
                    font=("Arial", 24, "normal"))
 
     def score_update(self):
         self.score += 1
-        self.clear()
-        self.write(f"Score: {self.score}", align="center",
-                   font=("Arial", 24, "normal"))
+        if self.score > self.high_score:
+            self.high_score = self.score
 
-    def game_over(self):
-        self.goto(0, 0)
         self.clear()
-        self.write(f"Game Over Total Score: {self.score}", align="center",
+        self.write(f"Score: {self.score} High Score: {self.high_score}", align="center",
                    font=("Arial", 24, "normal"))
