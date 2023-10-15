@@ -1,6 +1,5 @@
 from turtle import Turtle
 
-
 STARTING_POSITION = [(0, 0), (-20, 0), (-40, 0)]
 MOVE_DISTANCE = 20
 
@@ -50,3 +49,9 @@ class Snake:
         new_segment.penup()
         new_segment.goto(position)
         self.segments.append(new_segment)
+
+    def reset(self):
+        for segment in self.segments:
+            segment.goto(1000, 1000)
+        self.segments.clear()
+        self.create_snake()
