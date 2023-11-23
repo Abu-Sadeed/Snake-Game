@@ -10,7 +10,8 @@ class Scoreboard(Turtle):
         self.hideturtle()
         self.goto(0, 250)
         self.score = 0
-        self.high_score = 0
+        with open("data.txt", "r") as f:
+            self.high_score = int(f.read())
         self.write(f"Score: {self.score} High Score: {self.high_score}", align="center",
                    font=("Arial", 24, "normal"))
 
@@ -18,6 +19,8 @@ class Scoreboard(Turtle):
         self.score += 1
         if self.score > self.high_score:
             self.high_score = self.score
+            with open("data.txt", "w") as f:
+                f.write(f"{self.high_score}")
 
         self.clear()
         self.write(f"Score: {self.score} High Score: {self.high_score}", align="center",
